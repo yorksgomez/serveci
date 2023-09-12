@@ -37,7 +37,40 @@ export default class TravelLogScreen extends Component {
     super(props);
 
     this.state = {
-      services: []
+      services: [
+        {
+          domi: {
+            user: {
+              name: "Estudiante A"
+            }
+          },
+          createdAt: "2021/12/22 12:00:00"
+        },
+        {
+          domi: {
+            user: {
+              name: "Estudiante B"
+            }
+          },
+          createdAt: "2021/12/22 12:00:00"
+        },
+        {
+          domi: {
+            user: {
+              name: "Estudiante C"
+            }
+          },
+          createdAt: "2021/12/22 12:00:00"
+        },
+        {
+          domi: {
+            user: {
+              name: "Estudiante D"
+            }
+          },
+          createdAt: "2021/12/22 12:00:00"
+        }
+      ]
     };
 
     this.controller = new ServiceController();
@@ -51,7 +84,7 @@ export default class TravelLogScreen extends Component {
     return (
       <BaseScreen style={styles.mainView}>
         <CloseableScreen style={styles.wrap} navigation={this.props.navigation}>
-          <DefaultTitle style={styles.title}>Mis Viajes</DefaultTitle>
+          <DefaultTitle style={styles.title}>Mis Servicios</DefaultTitle>
           <View style={styles.iconicedContainer}>
             {this.state.services.map(service => 
               <IconicedContent

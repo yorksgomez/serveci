@@ -77,11 +77,7 @@ export default class RegisterScreen extends Component {
           <DefaultButton
             title="Registro"
             onPress={ () => 
-              this.controller.register(
-               this.state.params,
-               r => this.props.navigation.navigate('Login'),
-               err => UserController.showError("No se ha podido registrar", JSON.stringify(err.data).replace(/[\[\]\{\}\"]+/g, ''))
-              )
+              this.props.navigation.navigate('Login')
             }
           />
         </View>

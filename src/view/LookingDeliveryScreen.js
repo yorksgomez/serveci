@@ -28,8 +28,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   motoImage: {
-    width: "100%",
-    height: 200
+    width: 150,
+    height: 150,
+    resizeMode: 'contain'
   },
   motoText: {
     marginTop: 15,
@@ -66,7 +67,8 @@ export default class LookingDeliveryScreen extends Component {
   }
 
   componentDidMount() {
-    this.find();
+    //this.find();
+    sleep(3000).then( () =>  this.props.navigation.navigate('Service', {}));
   }
 
   render() {
@@ -74,13 +76,12 @@ export default class LookingDeliveryScreen extends Component {
       <BaseScreen style={styles.mainView}>
         <View style={styles.wrap}>
           <DefaultTitle style={styles.title}>Bienvenido</DefaultTitle>
-          <DefaultSubtitle style={styles.subtitle}>{ServiceController.user().name}</DefaultSubtitle>
+          <DefaultSubtitle style={styles.subtitle}>Cargando </DefaultSubtitle>
           <View style={styles.moto}>
             <GifImage
-              source={require('@/assets/img/moto.gif')}
+              source={require('@/assets/img/esperandomoto.gif')}
               style={styles.motoImage}
             />
-            <DefaultText style={styles.motoText}>Buscando moto...</DefaultText>
           </View>
         </View>
       </BaseScreen>

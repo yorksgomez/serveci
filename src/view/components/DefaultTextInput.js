@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     color: "#363837",
     borderRadius: 50,
     borderWidth: 2,
-    borderColor: "#099070",
+    borderColor: "#AE0001",
     paddingHorizontal: 10,
     paddingVertical: 5,
     backgroundColor: "#FFF"

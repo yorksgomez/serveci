@@ -46,26 +46,26 @@ const styles = StyleSheet.create({
     height: 25
   },
   modalButton: {
-    backgroundColor: "#1D896F"
+    backgroundColor: "#A31C30"
   },
   wrap: {
     marginTop: 0,
     width: 320,
   },
   title: {
-    marginBottom: 20
+    marginBottom: 0
   },
   subtitle: {
     marginBottom: 35
   },
   iconicedContainer: {
-    marginVertical: 20
+    marginTop: 0
   },
   iconiced: {
     marginBottom: 20
   },
   iconicedContent: {
-    fontSize: 20
+    fontSize: 18
   }
 });
 
@@ -117,20 +117,40 @@ export default class HomeScreen extends Component {
         </DefaultModal>
         <View style={styles.wrap}>
           <DefaultTitle style={styles.title}>Bienvenido</DefaultTitle>
-          <DefaultSubtitle style={styles.subtitle}>{RatingController.user().name}</DefaultSubtitle>
           <View style={styles.iconicedContainer}>
             <IconicedContent
-              source={require('@/assets/img/pidetudomi.png')}
+              source={require('@/assets/img/ayuda.png')}
               style={styles.iconiced}
-              onPress={() => this.props.navigation.navigate("LookingDelivery")}
+              onPress={() => this.props.navigation.navigate("Feed", {type: "AYUDA"})}
             >
-              <DefaultText style={styles.iconicedContent}>Pide tu domi</DefaultText>
+              <DefaultText style={styles.iconicedContent}>Ayuda algún estudiante</DefaultText>
             </IconicedContent>
             <IconicedContent
-              source={require('@/assets/img/pidetumoto.png')}
-              onPress={() => this.props.navigation.navigate("LookingTravel")}
+              source={require('@/assets/img/elemento.png')}
+              style={styles.iconiced}
+              onPress={() => this.props.navigation.navigate("Publication", {type: "SOLICITUD DE MATERIAL"})}
             >
-              <DefaultText style={styles.iconicedContent}>Pide tu viaje en moto</DefaultText>
+              <DefaultText style={styles.iconicedContent}>Solicitar un elemento</DefaultText>
+            </IconicedContent>
+            <IconicedContent
+              source={require('@/assets/img/question.png')}
+              style={styles.iconiced}
+              onPress={() => this.props.navigation.navigate("Publication", {type: "PREGUNTA"}) }
+            >
+              <DefaultText style={styles.iconicedContent}>Hacer una pregunta</DefaultText>
+            </IconicedContent>
+            <IconicedContent
+              source={require('@/assets/img/lost.png')}
+              style={styles.iconiced}
+              onPress={() => this.props.navigation.navigate("Publication", {type: "OBJETO PERDIDO"}) }
+            >
+              <DefaultText style={styles.iconicedContent}>Publica un objeto perdido</DefaultText>
+            </IconicedContent>
+            <IconicedContent
+              source={require('@/assets/img/wheel.png')}
+              onPress={() => this.props.navigation.navigate("LookingDelivery")}
+            >
+              <DefaultText style={styles.iconicedContent}>Solicitar un Wheels</DefaultText>
             </IconicedContent>
           </View>
         </View>

@@ -59,13 +59,13 @@ export default class ProfileScreen extends Component {
   constructor(props) {
     super(props);
     
-    this.user = UserController.user();
+    this.user = UserController.user() ?? {};
     this.state = {
       params: {
-        name: this.user.name,
-        lastname: this.user.lastname,
-        phone: this.user.phone,
-        nit: this.user.nit,
+        name: this.user.name ?? '',
+        lastname: this.user.lastname ?? '',
+        phone: this.user.phone ?? '',
+        nit: this.user.nit ?? '',
         nit_type: 'CC'
       }
     };
@@ -116,7 +116,7 @@ export default class ProfileScreen extends Component {
                       err => this.props.navigation.navigate('Login')
                     ); 
                   },
-                  err => console.log(err)
+                  err => this.props.navigation.navigate('Login')//console.log(err)
                 )
               }
             />

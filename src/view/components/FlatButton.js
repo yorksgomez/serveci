@@ -5,7 +5,7 @@ import LinearGradient from "react-native-linear-gradient";
 const styles = StyleSheet.create({
   appButtonContainer: {
     elevation: 8,
-    backgroundColor: "#A3285E",
+    backgroundColor: "#A31C30",
     borderRadius: 100,
     paddingVertical: 10,
     paddingHorizontal: 12,

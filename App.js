@@ -20,6 +20,11 @@ import DefaultHeaderMenu from '@/view/components/DefaultHeaderMenu';
 import LookingDeliveryScreen from '@/view/LookingDeliveryScreen';
 import ServiceScreen from '@/view/ServiceScreen';
 import LoadingScreen from '@/view/LoadingScreen';
+import PublicationScreen from '@/view/PublicationScreen';
+import FeedScreen from '@/view/FeedScreen';
+import SupportScreen from '@/view/SupportScreen';
+import AnswerScreen from '@/view/AnswerScreen';
+import InfoScreen from '@/view/InfoScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -84,6 +89,26 @@ const App = () => {
         <Stack.Screen
           name="Service"
           component={ServiceScreen}
+        />
+        <Stack.Screen
+          name="Publication"
+          component={PublicationScreen}
+        />
+        <Stack.Screen
+          name="Feed"
+          component={FeedScreen}
+        />
+        <Stack.Screen
+          name="Support"
+          component={SupportScreen}
+        />
+        <Stack.Screen
+          name="Answer"
+          component={AnswerScreen}
+        />
+        <Stack.Screen
+          name="Info"
+          component={InfoScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

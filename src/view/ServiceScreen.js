@@ -62,31 +62,35 @@ export default class ServiceScreen extends Component {
     }
 
     render() {
-        console.log(this.service);
         return (
             <BaseScreen style={styles.mainView}>
                 <View style={styles.wrap}>
                     <DefaultTitle style={styles.title}>Bienvenido</DefaultTitle>
-                    <DefaultSubtitle style={styles.subtitle}>{ServiceController.user().name}</DefaultSubtitle>
+                    <DefaultSubtitle style={styles.subtitle}>Estudiante</DefaultSubtitle>
                     <View style={styles.mapContainer}>
                         <DefaultText style={styles.service}>Servicio activo</DefaultText>
                         <Map style={styles.map}></Map>
-                        <DefaultText style={styles.estimated}>Tiempo estimado {this.service.estimated} minutos</DefaultText>
+                        <DefaultText style={styles.estimated}>Tiempo estimado 10 minutos</DefaultText>
                     </View>
                     <IconicedContent
                         source={require('@/assets/img/navuser.png')}
                         style={styles.iconiced}
                     >
-                        <DomiInfo domi={this.service.domi} />
+                        <DomiInfo domi={{
+                            rating: 5,
+                            user: {
+                                name: "Estudiante 2"
+                            }
+                        }} />
                     </IconicedContent>
                     <View style={styles.buttons}>
-                        <CallButton phone={this.service.domi.user.phone}></CallButton>
+                        <CallButton phone={3001231231}></CallButton>
                         <FlatButton 
                             title="Cancelar" 
                             onPress={() => 
                                 this.controller.cancel(
-                                    () => this.props.navigation.navigate("Home", {enableModal: true, domi: this.service.domi}),
-                                    (err) => this.props.navigation.navigate("Home", {enableModal: true, domi: this.service.domi}),
+                                    () => this.props.navigation.navigate("Home", {enableModal: true, domi: {}}),
+                                    (err) => this.props.navigation.navigate("Home", {enableModal: true, domi: {}}),
                                 )  
                             }></FlatButton>
                     </View>

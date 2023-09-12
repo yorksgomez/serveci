@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-end",
     flex: 1,
-    height: 250
   },
   btnContainer: {
     width: 40,
@@ -44,6 +43,12 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginRight: 10
+  },
+  pheight: {
+    height: 250
+  },
+  psmal: {
+    height: 70
   }
 });
 
@@ -64,7 +69,7 @@ export default class DefaultHeaderMenu extends Component {
 
   render() {
     return (
-      <View style={styles.menuParent}>
+      <View style={[styles.menuParent, this.state.menuVisible ? styles.pheight : styles.psmal]}>
         {this.state.menuVisible ?
           (
             <View style={styles.menuContainer}>
@@ -73,12 +78,12 @@ export default class DefaultHeaderMenu extends Component {
                   source={require('@/assets/img/navuser.png')}
                   style={styles.userImage}
                 />
-                <DefaultText>{UserController.user().name}</DefaultText>
+                <DefaultText>Estudiante</DefaultText>
               </View>
               <View style={styles.navMenu}>
                 <NavMenuItem onPress={() => this.redirectApp("Profile")}>Actualizar datos</NavMenuItem>
-                <NavMenuItem onPress={() => this.redirectApp("TravelLog")}>Mis viajes</NavMenuItem>
-                <NavMenuItem onPress={() => Linking.openURL('whatsapp://send?text=Hola, soy cliente de tudomiya y necesito &phone=+573028406966') } >Chat soporte</NavMenuItem>
+                <NavMenuItem onPress={() => this.redirectApp("TravelLog")}>Mis servicios</NavMenuItem>
+                <NavMenuItem onPress={() => this.redirectApp("Support") } >Chat soporte</NavMenuItem>
               </View>
             </View>
           )

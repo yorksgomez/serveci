@@ -5,13 +5,13 @@ const styles = StyleSheet.create({
   defaultTextInput: {
     fontSize: 15,
     fontWeight: "500",
-    color: "#C1C3C2",
+    color: "#EFEFEF",
     borderRadius: 50,
     borderWidth: 2,
-    borderColor: "#8B8F8E",
+    borderColor: "#AE0001",
     paddingHorizontal: 10,
     paddingVertical: 5,
-    backgroundColor: "#8B8F8E"
+    backgroundColor: "#AE0001"
   }
 });
 
@@ -24,6 +24,7 @@ export default class InverseTextInput extends Component {
   render() {
     return (
       <TextInput
+        placeholderTextColor="#CECECE"
         {...this.props}
         style={[styles.defaultTextInput, this.props.style]}
       />

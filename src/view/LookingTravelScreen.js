@@ -45,31 +45,29 @@ export default class LookingTravelScreen extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { service: null, tries: 0 };
+    this.state = { tries: 0 };
     this.controller = new ServiceController();
   }
 
   find() {
     this.controller.create(
-      {service_type: 'App\\Models\\Travel'},
+      {service_type: 'App\\Models\\Delivery'},
       (service) => {
         this.props.navigation.navigate('Service', {service: service});
       },
       (err) => {
-        console.log(err);
         if(this.state.tries < 4) {
           this.setState({tries: this.state.tries + 1});
+          
           sleep(500).then(() => this.find());
-        }else {
-          this.props.navigation.navigate('Service', {service: {domi: {name: 'domiciliario'
-            }}});
-        }
+        }  
       }
     ); 
   }
 
   componentDidMount() {
-    this.find();
+    //this.find();
+    sleep(3000).then( () =>  this.props.navigation.navigate('Service', {}));
   }
 
   render() {
@@ -77,13 +75,13 @@ export default class LookingTravelScreen extends Component {
       <BaseScreen style={styles.mainView}>
         <View style={styles.wrap}>
           <DefaultTitle style={styles.title}>Bienvenido</DefaultTitle>
-          <DefaultSubtitle style={styles.subtitle}>{ServiceController.user().name}</DefaultSubtitle>
+          <DefaultSubtitle style={styles.subtitle}>Cargando</DefaultSubtitle>
           <View style={styles.moto}>
             <GifImage
               source={require('@/assets/img/moto.gif')}
               style={styles.motoImage}
             />
-            <DefaultText style={styles.motoText}>Buscando moto...</DefaultText>
+            <DefaultText style={styles.motoText}>...</DefaultText>
           </View>
         </View>
       </BaseScreen>

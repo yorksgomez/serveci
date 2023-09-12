@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const image = require("@/assets/img/fondoapp.png");
+const image = require("@/assets/img/fondoapp.jpg");
 
 export default class BaseScreen extends Component {
 

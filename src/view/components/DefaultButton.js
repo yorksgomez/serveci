@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   appButtonText: {
     fontSize: 14,
     color: "#fff",
-    fontWeight: "1000",
+    fontWeight: "500",
     fontFamily: "lighter",
     alignSelf: "center",
   }
@@ -29,7 +29,7 @@ export default class DefaultButton extends Component {
     return (
       <TouchableOpacity onPress={this.props.onPress}>
         <LinearGradient
-          colors={["#099070", "#C52360"]}
+          colors={["#A31C30", "#AE0001"]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           style={styles.appButtonContainer}>

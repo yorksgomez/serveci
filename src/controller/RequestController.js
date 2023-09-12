@@ -17,7 +17,7 @@ export default class RequestController {
       }
     };
     
-    let endpoint = 'https://tudomiya.ditscol.com/api/' + url + '?' + ( new URLSearchParams( data ).toString() );
+    let endpoint = 'https://.../api/' + url + '?' + ( new URLSearchParams( data ).toString() );
     return fetch(endpoint, options);
   }
   

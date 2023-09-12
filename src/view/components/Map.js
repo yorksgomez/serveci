@@ -15,6 +15,8 @@ const styles = StyleSheet.create({
     }
 });
 
+const image = require('@/assets/img/map.jpg');
+
 export default class Map extends Component {
 
   constructor(props) {
@@ -23,7 +25,7 @@ export default class Map extends Component {
 
   render() {
     return (
-      <MapView
+      /*<MapView
       style={[styles.map, this.props.style]}  
       showsUserLocation={true}  
       zoomEnabled={true}  
@@ -35,6 +37,12 @@ export default class Map extends Component {
         longitudeDelta: 0.0421,  
       }}> 
       </MapView>
+      */
+      <Image
+      style={[styles.map, this.props.style]}  
+      source={image}
+      > 
+      </Image>
     );
   }
 
